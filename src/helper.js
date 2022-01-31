@@ -1,8 +1,9 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
-export const register = async () => {
+export const register = async (createUserWithEmailAndPassword, auth, registerEmail, registerPassword) => {
   try {
-    const user = await createUserWithEmailAndPassword();
+    const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
+    console.log(user);
   } catch (error) {
     console.log(error.message);
   }
